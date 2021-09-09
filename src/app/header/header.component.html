@@ -1,0 +1,24 @@
+<header class="header d-flex align-items-center">
+        <h4 class="text-left flex-grow-1 mx-2">SpaceX - App</h4>
+        <div class="d-flex">
+            <div class="profile my-3 mx-2">
+                <img src="../../assets/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="d-flex align-items-center">Hello Marry</div>
+            <div class="sidebar-opener d-flex align-items-center mx-3" (click)="sidebarShow = !sidebarShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                      </svg>
+              </div>
+              
+              <div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+                  <div class="sidebar-close"(click)="sidebarShow = !sidebarShow">X</div>
+                    <div class="sidebar-content">
+                      <a href="#">Home Page</a>
+                      <a href="#">About Us</a>
+                      <a href="#">Services</a>
+                      <a href="#">Log Out</a>
+                    </div>
+              </div>
+        </div>
+    </header>

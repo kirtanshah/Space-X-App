@@ -1,0 +1,55 @@
+<section class="container-fluid">
+    <app-header></app-header>
+    <hr class="m-0">
+    <section class="dashboard">
+        <h5 class="py-3 px-2">Analytics Dashboard</h5>
+        <div class="row my-3 px-2">
+            <div class="col-sm-4">
+                <div class="dashboard-card">
+                    <div class="tiles">
+                        <label class="label">Upcoming</label>
+                        <div class="count">{{upcomingCount}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="dashboard-card">
+                    <div class="tiles">
+                        <label class="label">Past</label>
+                        <div class="count">{{pastCount}}</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="dashboard-card">
+                    <div class="tiles">
+                        <label class="label">Total</label>
+                        <div class="count">{{ upcomingCount + pastCount }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="m-0">
+        <div class="row row-cols-1 p-2">
+            <div class="col-md-6 my-2">
+                <div class="card h-100 shadow-sm">
+                    <highcharts-chart [Highcharts]="highChartsObj" [options]="barChartOptions">
+                    </highcharts-chart>
+                </div>
+            </div>
+            <div class="col-md-6 my-2">
+                <div class="card h-100 shadow-sm">
+                        <h5 class="px-2 py-2 text-center">Launch Timeline</h5>
+                    <div id="timeline-container">
+                        <div class="inner-container">
+                            <ul class="timeline my-0" *ngFor="let date of utcDate">
+                                <li class="timeline-item" data-date="">{{date}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
